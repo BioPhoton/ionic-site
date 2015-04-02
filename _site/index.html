@@ -3,29 +3,14 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ionic makes it incredibly easy to build beautiful and interactive mobile apps using HTML5 and AngularJS.">
-<meta name="keywords" content="html5,javascript,mobile,drifty,ionic,hybrid,phonegap,cordova,native,ios,android,angularjs">
-<meta name="author" content="Drifty">
-<meta property="og:image" content="http://ionicframework.com/img/ionic-logo-blog.png"/>
+<meta name="description" content="DrupalIonic makes it incredibly easy to utilize the whole power of Drupal 7 Services 3.x">
+<meta name="keywords" content="html5,javascript,mobile,drupal,ionic,hybrid,phonegap,cordova,native,ios,android,angularjs">
+<meta name="author" content="Hladky Michael">
 
-    <title>Ionic: Advanced HTML5 Hybrid Mobile App Framework</title>
+
+    <title>DrupalIonic: Full stack angular framework for Drupal7</title>
     <link href="/css/site.css?12" rel="stylesheet">
-<!--<script src="//cdn.optimizely.com/js/595530035.js"></script>-->
-<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-44023830-1', 'ionicframework.com');
-  ga('send', 'pageview');
-
-</script>
-
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
   </head>
@@ -129,13 +114,11 @@
     </div>
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="products-nav nav-link" href="http://ionic.io/">Products</a></li>
+      <ul class="nav navbar-nav navbar-right"> 
+        <li><a class="products-nav nav-link" href="#">Resources</a></li>
         <li><a class="getting-started-nav nav-link" href="/getting-started/">Getting Started</a></li>
         <li><a class="docs-nav nav-link" href="/docs/">Docs</a></li>
-        <li><a class="examples-nav nav-link" href="http://showcase.ionicframework.com/">Showcase</a></li>
-        <li><a class="nav-link" href="http://forum.ionicframework.com/">Forum</a></li>
-        <li><a class="blog-nav nav-link" href="/blog/">Blog <span id="blog-badge">1</span></a></li>
+        <li><a class="examples-nav nav-link" href="#">Demos</a></li>
       </ul>
     </div>
   </div>
@@ -151,10 +134,10 @@
     <div class="row">
       <div class="col-sm-6">
         <h1>
-          Create amazing apps
+          Utilize the whole power of Drupal in your Ionic apps
         </h1>
         <h2>
-          The beautiful, open source front-end SDK for developing hybrid mobile apps with HTML5.
+        The first full stack Drupal Framework for Ionic developers.
         </h2>
         <p class="btn-row">
           <a id="repo-download" class="btn btn-primary btn-download desktop-btn" href="/getting-started/">Get Started</a>
@@ -182,9 +165,8 @@
   <div class="container">
     <div class="row">
       <ul class="social-row ionic col-md-7">
-        <li><a href="https://github.com/driftyco/ionic" target="_blank"><i class="ion-social-github"></i> <span id="gh-stargazers"></span> stars</a></li>
-        <li><a href="https://github.com/driftyco/ionic" target="_blank"><i class="ion-fork-repo"></i> <span id="gh-forks"></span> forks</a></li>
-        <li><a href="https://twitter.com/IonicFramework" target="_blank"><i class="ion-social-twitter"></i> <span id="tw-followers">Twitter</span></a></li>
+        <li><a href="https://github.com/BioPhoton/ng-drupal-ionic" target="_blank"><i class="ion-social-github"></i> <span id="gh-stargazers"></span> stars</a></li>
+        <li><a href="https://github.com/BioPhoton/ng-drupal-ionic" target="_blank"><i class="ion-fork-repo"></i> <span id="gh-forks"></span> forks</a></li>
       </ul>
       <form action="http://codiqa.createsend.com/t/t/s/jytylh/" method="post" class="input-group col-md-5">
         <input name="cm-jytylh-jytylh" class="form-control" type="email" placeholder="Enter your email for the latest ionic news" required />
@@ -194,14 +176,6 @@
       </form>
     </div>
   </div>
-</div>
-
-<div class="creator-bar">
-  <img src="http://ionic-dash-static.s3.amazonaws.com/img/pushlogo.png" style="width: 200px;">
-  
-  <h2>Coming soon: Push notifications made easy for your Ionic apps</h2>
-  
-  <a href="https://apps.ionic.io/landing/push" class="btn btn-success">Reserve your spot</a>
 </div>
 
 <script>
@@ -215,24 +189,16 @@
   }
   $.ajax({
     dataType: "jsonp",
-    url: "https://api.github.com/repos/driftyco/ionic",
+    url: "https://api.github.com/repos/BioPhoton/ng-drupal-ionic",
     success: function(data){
+    	
       if(data) {
-        if(data.data.watchers){
-          $("#gh-stargazers").html(digits(data.data.watchers));
+        if(data.data.stargazers_count || data.data.stargazers_count == 0){
+          $("#gh-stargazers").html(digits(data.data.stargazers_count));
         }
-        if(data.data.forks){
+        if(data.data.forks || data.data.forks == 0){
           $("#gh-forks").html(digits(data.data.forks));
         }
-      }
-    }
-  });
-  $.ajax({
-    dataType: "jsonp",
-    url: "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=ionicframework",
-    success: function(data){
-      if(data && data.length && data[0].formatted_followers_count){
-        $("#tw-followers").html(digits(data[0].formatted_followers_count));
       }
     }
   });
@@ -243,83 +209,31 @@
   <div class="desc-row">
 
     <h3>
-      Create hybrid mobile apps with the web technologies you love.
+      Create hybrid mobile apps that include the power of Drupal 7 Services.
     </h3>
     <p>
-      Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS <a href="/docs/components/">components</a>, gestures, and tools for building highly interactive apps. Built with <a href="http://sass-lang.com/" target="_blank">Sass</a>
-      and optimized for <a href="http://angularjs.org/" target="_blank">AngularJS</a>.
+      Free and open source, we offers a library of angularjs services for building REST based apps for Drupal 7 sites. You also can run Drupal as a headless backend.
     </p>
 
   </div>
 
-  <div class="feature-row img-performance">
+  <div class="feature-row img-bower">
 
-    <h4>Performance obsessed</h4>
+    <h4>Include over bower</h4>
     <p>
-      Speed is important. So important that you only notice when it isn't there. Ionic is
-      built to perform and behave great on the latest mobile devices. With <span class="feature-row-strong">minimal DOM</span>
-      manipulation, <span class="feature-row-strong">zero jQuery</span>, and <span class="feature-row-strong">hardware accelerated</span> transitions,
-      one thing is for sure: You'll be impressed.
+      The framework is available a a bower comopnent to easily include in into you ionic project. <br/>
+      <code>$ bower install ng-drupal-ionic</code>
     </p>
 
   </div>
 
   <div class="feature-row img-angular img-right">
 
-    <h4>Angular &amp; Ionic</h4>
+    <h4>Angular</h4>
     <p>
-      <span class="feature-row-strong">A match made in heaven.</span> Ionic utilizes <a href="http://angularjs.org/">Angular</a>
-      in order to create a powerful SDK most suited to develop rich and robust applications. Ionic not only
-      looks nice, but its core architecture is built for <span class="feature-row-strong">serious app development</span>,
-      and Angular ties in perfectly.
+      DrupalIonic utilizes <a href="http://angularjs.org/">Angular</a>
+      in order to create a powerful framework for Services 3.x
     </p>
-
-  </div>
-
-  <div class="feature-row img-native">
-
-    <h4>Native focused</h4>
-    <p>
-      Ionic is modeled on popular native mobile development SDKs, making it easy to understand for
-      anyone that has built a native app for <span class="feature-row-strong">iOS</span> or <span class="feature-row-strong">Android</span>. Just drop it in your code to get going,
-      and push through <a href="http://cordova.apache.org/">Cordova</a> when it's ready. <span class="feature-row-strong">Develop once, deploy everywhere</span>.
-    </p>
-
-  </div>
-
-  <div class="feature-row img-design img-right">
-
-    <h4>Beautifully designed</h4>
-    <p>
-      Clean, simple, and functional. Ionic has been designed to work and <span class="feature-row-strong">display beautifully</span> on all current mobile devices. With tons of popular mobile components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme, you'll wonder how you lived without it.
-    </p>
-
-  </div>
-
-  <div class="feature-row img-cli">
-
-      <h4>A powerful CLI</h4>
-      <p>
-        Use just one command to <span class="feature-row-strong">create, build, test, and deploy</span> your Ionic apps onto any platform. With amazing features like Live Reload and integrated logging, you'll already be miles ahead of your native frenemies. Just run <code>npm install -g ionic</code>, and you're good to go!
-      </p>
-
-  </div>
-
-  <div class="feature-row img-learn img-right">
-
-    <h4>Fun to learn</h4>
-    <p>
-      All you need to know are <span class="feature-row-strong">HTML, CSS, and JavaScript:</span> the building blocks of the web. You'll even learn AngularJS as you work. We wrote <a href="http://learn.ionicframework.com">tons of tutorials</a> to get you started and help you level up your mobile development skills. There’s no question <span class="feature-row-strong">you'll be shipping apps in no time</span>.
-    </p>
-
-  </div>
-
-  <div class="feature-row img-nerds">
-
-      <h4>Built by nerds (like you)</h4>
-      <p>
-        Built and maintained by <span class="feature-row-strong">developers <i>and</i> designers</span> passionate about web technologies. Ionic focuses on standards compliant code, is forward thinking, and is managed through <a href="https://github.com/driftyco/ionic">Github</a>. We're making mobile development with HTML5 awesome and simple.
-      </p>
 
   </div>
 
@@ -414,7 +328,7 @@
 
     <blockquote class="testimonial-2" data-testimonial="2">
       <p>
-        I was so inspired when I found Ionic. It fills a gap that’s missing when building for mobile and solves many complexities that otherwise require multiple libraries, keeping your code cleaner. Overall, it just makes mobile development fun and fast, so you can build more!
+        I was so inspired when I found Ionic. It fills a gap that�s missing when building for mobile and solves many complexities that otherwise require multiple libraries, keeping your code cleaner. Overall, it just makes mobile development fun and fast, so you can build more!
       </p>
       <footer style="background-image: url('/img/testimonials/testimonial-holly@2x.png')">
         <cite>Holly Schinsky</cite>

@@ -4836,10 +4836,13 @@ h1 + h2 + p {
     .home .feature-row.img-right h4, .home .feature-row.img-right p {
       padding-right: 56%;
       padding-left: 30px; } }
+.home .img-bower {
+  background-image: url("/img/bower.png"); }
+
 .home .img-performance {
   background-image: url("/img/performance.png"); }
 .home .img-angular {
-  background-image: url("/img/angular-ionic.png"); }
+  background-image: url("/img/angularjs-logo.png"); }
 .home .img-native {
   background-image: url("/img/native.png"); }
 .home .img-design {
