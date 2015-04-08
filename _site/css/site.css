@@ -4552,6 +4552,23 @@ h1 + h2 + p {
   font-weight: 300;
   font-size: 12px;
   opacity: 0.3; }
+	
+.home .preview-area {
+	height: 640px;
+	text-align:center;
+	position: relative;
+}
+.home .preview-area .preview-iframe {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    height: 447px;
+    left: 167px;
+    position: absolute;
+    top: 76px;
+    width: 253px;
+    z-index: 2147483647;
+}
+
 .home .feature-img {
   height: 175px;
   background-position: center 15px;
