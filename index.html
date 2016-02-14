@@ -8,9 +8,10 @@
 <meta name="keywords" content="html5,javascript,mobile,drupal,ionic,hybrid,phonegap,cordova,native,ios,android,angularjs">
 <meta name="author" content="Hladky Michael">
 
-    <title>DrupalIonic: Full stack angular framework for the services module</title>
+    <title>DrupalIonic: Full stack angular module for the services module</title>
     <link href="/css/site.css" rel="stylesheet">
 	<link rel="prefetch" href="http://www.drupalionic.org/img/iphone_6_small.png" />
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
  </head>
 
   <body class="full-page home no-js horizontal-gradient">
@@ -61,7 +62,7 @@
       </div>
       <div class="col-sm-6 preview-area one">
       	<div id="demo-wrapper">
-      		<iframe class="preview-iframe" src="http://www.drupalionic.org/app_demo/www/index.html" name="device-preview"></iframe>
+      		<iframe class="preview-iframe" src="http://www.drupalionic.org/app_demo" onload="onFrameLoad();" name="device-preview"></iframe>
         	<img class="i-phone" src="/img/iphone_6_small.png">  
           	<!--<img class="phone" src="/img/phone-case.png">-->
         </div>
@@ -73,10 +74,52 @@
 <div class="utility-bar navbar-nav-fixed-bottom">
   <div class="container">
     <div class="row">
-   		<div class="col-xs-12"> </div>
+   		<div class="col-xs-12">
+			<button class="test">insert data</button>
+			
+		</div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+		
+			function onFrameLoad() {
+				console.log('onFrameLoad'); 
+				console.log( $('iframe[name=device-preview]').contents().find('input').size()); 
+			}
+			$('.test').click(function(elem) {
+			var $loginForm = $('iframe[name=device-preview]').contents().find('form[name=loginForm]');
+				$loginForm.find('input').each(function(i){
+				var $input = $(this);
+					
+					//$loginForm.find('button').click();
+				
+					
+					console.log('$input', $input); 
+					$input.val("INJECTED!!!");
+					$input.trigger('input');
+					$input.triggerHandler('input');
+						
+					$input.trigger('blur');
+					$input.triggerHandler('blur');
+					
+					$input.trigger('click');
+					$input.triggerHandler('click');
+					$input.click();
+					
+					
+
+					
+					console.log('val of ' + $input.attr('name') + ' to :' + $input.val() + ' and trigger click'); 
+		
+					
+				});
+				
+				$loginForm.find('button').click();
+				
+			});
+				
+		</script>
 
   </body>
 </html>
